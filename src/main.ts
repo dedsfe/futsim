@@ -51,7 +51,7 @@ function startMatch(
   // Esconde o menu, mostra a UI do jogo
   mainMenu.hide();
   gameUI.style.display = "grid";
-  renderer.resize();
+  setTimeout(() => renderer.resize(), 10);
   currentOnMatchEnd = onMatchEnd || null;
 
   // Resolve clash colors
