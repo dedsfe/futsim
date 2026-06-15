@@ -1067,7 +1067,7 @@ export class MatchEngine {
     } else if (so.state === "result") {
       const w = this.decideShootout();
       if (w) {
-        this.winner = w;
+        so.winner = w;
         this.phase = "end";
         this.lastEvent = `Fim de Jogo! ${w === "home" ? this.home.name : this.away.name} vence nos pênaltis!`;
       } else {

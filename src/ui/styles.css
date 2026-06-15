@@ -361,3 +361,62 @@ input[type=range] { accent-color: var(--accent); }
 .stat-row .sv { font-variant-numeric: tabular-nums; font-weight: 600; }
 .stat-row .sv.h { text-align: left; color: var(--home); }
 .stat-row .sv.a { text-align: right; color: var(--away); }
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* World Cup Menu */
+  .wc-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    text-align: center;
+  }
+  .wc-header h1 {
+    font-size: 1.8rem;
+  }
+  .wc-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .wc-btn {
+    width: 100%;
+  }
+  
+  /* Game UI Layout */
+  #game-ui {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    overflow-y: auto;
+    height: auto;
+  }
+  
+  /* Sidebar Panels */
+  #sidebar {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .tactics-layout {
+    flex-direction: column;
+  }
+  .tactics-pitch, .tactics-list {
+    width: 100%;
+  }
+
+  /* Scoreboard Scale */
+  .sb {
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+  .sb-pens {
+    transform: scale(0.85);
+    transform-origin: top center;
+  }
+
+  /* Main Menu Options */
+  .mm-options {
+    flex-direction: column;
+    align-items: center;
+  }
+}
