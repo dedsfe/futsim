@@ -70,11 +70,14 @@ export class Player {
 
   /** Velocidade máxima atual (m/s) considerando atributo e fadiga. */
   maxSpeed() {
-    const base = lerp(PLAYER.MAX_SPEED_MIN, PLAYER.MAX_SPEED_MAX, this.attr.pace / 100);
+    // Curva exponencial para destacar muito os velocistas (+85 pace)
+    const paceCurve = Math.pow(this.attr.pace / 100, 1.8);
+    const base = lerp(PLAYER.MAX_SPEED_MIN, 10.5, paceCurve); // Teto super alto (10.5 m/s)
     return base * lerp(0.7, 1, this.stamina);
   }
   accel() {
-    return lerp(PLAYER.ACCEL_MIN, PLAYER.ACCEL_MAX, this.attr.acceleration / 100) * lerp(0.78, 1, this.stamina);
+    const accelCurve = Math.pow(this.attr.acceleration / 100, 1.5);
+    return lerp(PLAYER.ACCEL_MIN, 28, accelCurve) * lerp(0.78, 1, this.stamina);
   }
 
   /**

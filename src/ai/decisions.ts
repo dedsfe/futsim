@@ -173,6 +173,14 @@ export function decide(owner: Player, world: World): Decision {
       0.5 * selfPressure * safety -
       longPenalty;
 
+    // "Tocar no craque": procura ativamente o jogador de maior overall do meio-campo pra frente
+    if (team.attackProgress(to) > 0.45) {
+      // starFactor vai de 0 (overall 70) a 1 (overall 100)
+      const starFactor = Math.max(0, m.overall - 70) / 30;
+      // Bônus considerável se ele estiver desmarcado
+      s += starFactor * 0.35 * Math.max(0.5, openness);
+    }
+
     // ASSISTÊNCIA: passar para companheiro em posição MELHOR de finalização
     if (team.attackProgress(to) > 0.6) {
       const mShot = evaluateShotQuality(m, world);

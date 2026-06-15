@@ -74,6 +74,35 @@ export class StatsPanel {
     );
     void pct;
     this.root.append(table);
+
+    // Tempo com a bola (Top 5)
+    const h4Top = el("h4", {}, "Mais tempo com a bola (Top 5)");
+    h4Top.style.marginTop = "1rem";
+    this.root.append(h4Top);
+    const timeList = el("div", { class: "goals" });
+    const allPlayers = [...e.home.players, ...e.away.players];
+    const topPlayers = allPlayers
+      .map(p => ({ p, time: s.timeOnBall[p.id] || 0 }))
+      .filter(item => item.time > 0)
+      .sort((a, b) => b.time - a.time)
+      .slice(0, 5);
+
+    if (topPlayers.length === 0) {
+      timeList.append(el("div", { class: "muted" }, "Sem dados de posse."));
+    } else {
+      for (const item of topPlayers) {
+        const secs = (item.time / 60).toFixed(1);
+        const row = el("div", { class: "goalrow" });
+        row.style.display = "flex";
+        row.style.justifyContent = "space-between";
+        const nameSpan = el("span", {}, `${item.p.name} (OVR ${item.p.overall})`);
+        nameSpan.style.color = item.p.team.color;
+        const timeSpan = el("span", { class: "muted" }, `${secs}s de posse`);
+        row.append(nameSpan, timeSpan);
+        timeList.append(row);
+      }
+    }
+    this.root.append(timeList);
   }
 }
 

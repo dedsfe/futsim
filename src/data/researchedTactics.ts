@@ -1,5 +1,6 @@
 import type { TeamTactics } from "../domain/types";
 import { defaultTactics } from "../tactics/defaults";
+import { COMBINED_TACTICS } from "./combinedData";
 
 /**
  * Perfil tático baseado em PESQUISA da forma real/atual de uma seleção.
@@ -173,6 +174,7 @@ export const RESEARCHED_PROFILES: Record<string, ResearchedTacticalProfile> = {
   england: EnglandCurrentRealTactics,
   spain: SpainCurrentRealTactics,
   portugal: PortugalCurrentRealTactics,
+  ...COMBINED_TACTICS
 };
 
 /** Converte um perfil pesquisado nos parâmetros do motor (TeamTactics). */

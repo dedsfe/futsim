@@ -6,6 +6,8 @@ import type { TeamSide, TeamTactics, FormationSlot } from "./types";
 export class Team {
   players: Player[] = [];
 
+  public secondaryColor?: string;
+
   constructor(
     public side: TeamSide,
     public name: string,

@@ -1,0 +1,476 @@
+{
+  "faceStats": {
+    "de-terstegen": [86, 85, 89, 90, 48, 88],
+    "de-neuer": [85, 85, 91, 86, 55, 87],
+    "de-rudiger": [82, 45, 68, 65, 86, 88],
+    "de-tah": [78, 35, 62, 60, 85, 87],
+    "de-schlotterbeck": [76, 45, 72, 68, 84, 82],
+    "de-kimmich": [72, 75, 88, 84, 83, 78],
+    "de-mittelstadt": [80, 60, 78, 76, 78, 72],
+    "de-andrich": [68, 78, 78, 75, 82, 85],
+    "de-pavlovic": [72, 65, 82, 80, 78, 75],
+    "de-gross": [60, 76, 85, 80, 75, 74],
+    "de-wirtz": [82, 80, 88, 90, 55, 68],
+    "de-musiala": [86, 80, 84, 93, 60, 65],
+    "de-sane": [91, 81, 80, 86, 45, 68],
+    "de-gnabry": [84, 84, 78, 85, 48, 68],
+    "de-havertz": [82, 82, 82, 85, 55, 75],
+    "de-fullkrug": [72, 85, 72, 78, 45, 86],
+    "nl-verbruggen": [84, 80, 85, 84, 45, 80],
+    "nl-flekken": [81, 78, 84, 82, 45, 80],
+    "nl-vandijk": [78, 60, 72, 74, 89, 86],
+    "nl-deligt": [74, 58, 65, 68, 84, 85],
+    "nl-ake": [78, 55, 75, 76, 85, 80],
+    "nl-dumfries": [85, 70, 75, 78, 78, 86],
+    "nl-frimpong": [94, 72, 78, 86, 75, 68],
+    "nl-dejong": [80, 68, 86, 88, 78, 76],
+    "nl-reijnders": [82, 76, 82, 84, 72, 75],
+    "nl-gravenberch": [78, 75, 82, 85, 74, 78],
+    "nl-schouten": [70, 65, 80, 78, 80, 76],
+    "nl-simons": [85, 80, 84, 88, 55, 65],
+    "nl-gakpo": [86, 84, 80, 84, 45, 78],
+    "nl-malen": [89, 80, 75, 84, 40, 70],
+    "nl-memphis": [78, 84, 82, 85, 35, 76],
+    "nl-zirkzee": [76, 80, 78, 84, 45, 80],
+    "it-donnarumma": [90, 84, 80, 92, 55, 85],
+    "it-vicario": [86, 80, 78, 88, 50, 82],
+    "it-bastoni": [75, 45, 78, 76, 86, 84],
+    "it-calafiori": [78, 55, 75, 78, 83, 82],
+    "it-buongiorno": [74, 40, 65, 68, 85, 84],
+    "it-dilorenzo": [80, 68, 76, 78, 82, 80],
+    "it-dimarco": [82, 75, 86, 82, 78, 75],
+    "it-barella": [80, 78, 85, 86, 78, 82],
+    "it-tonali": [82, 74, 82, 80, 80, 84],
+    "it-frattesi": [82, 78, 76, 80, 72, 78],
+    "it-pellegrini": [75, 80, 85, 84, 68, 72],
+    "it-chiesa": [90, 82, 78, 86, 45, 68],
+    "it-zaccagni": [84, 76, 78, 84, 50, 65],
+    "it-raspadori": [82, 80, 78, 84, 40, 60],
+    "it-scamacca": [72, 84, 70, 78, 40, 82],
+    "it-retegui": [78, 84, 70, 78, 45, 84],
+    "be-courtois": [85, 88, 75, 90, 48, 86],
+    "be-casteels": [84, 82, 78, 85, 45, 82],
+    "be-faes": [72, 45, 65, 68, 80, 82],
+    "be-theate": [75, 55, 68, 70, 80, 80],
+    "be-castagne": [78, 65, 75, 76, 78, 76],
+    "be-decuyper": [82, 65, 76, 75, 72, 70],
+    "be-onana": [75, 65, 75, 76, 82, 86],
+    "be-tielemans": [70, 80, 85, 82, 72, 75],
+    "be-mangala": [72, 60, 75, 78, 76, 78],
+    "be-debruyne": [72, 85, 94, 87, 65, 78],
+    "be-deketelaere": [80, 80, 82, 85, 55, 75],
+    "be-doku": [94, 75, 78, 90, 40, 68],
+    "be-trossard": [80, 82, 80, 86, 50, 60],
+    "be-bakayoko": [88, 76, 75, 86, 45, 68],
+    "be-lukaku": [80, 85, 75, 78, 40, 88],
+    "be-openda": [93, 84, 72, 82, 40, 76],
+    "ch-sommer": [84, 82, 80, 88, 50, 85],
+    "ch-kobel": [86, 84, 78, 90, 52, 84],
+    "ch-akanji": [80, 50, 75, 76, 86, 84],
+    "ch-schar": [65, 68, 75, 70, 82, 80],
+    "ch-rodriguez": [68, 70, 78, 76, 78, 75],
+    "ch-widmer": [78, 65, 72, 74, 76, 78],
+    "ch-ndoye": [88, 75, 74, 82, 60, 72],
+    "ch-xhaka": [65, 78, 88, 80, 80, 84],
+    "ch-freuler": [70, 72, 78, 76, 78, 80],
+    "ch-zakaria": [82, 68, 76, 80, 80, 84],
+    "ch-aebischer": [74, 72, 78, 76, 74, 75],
+    "ch-rieder": [75, 75, 78, 78, 65, 72],
+    "ch-vargas": [86, 75, 75, 82, 50, 65],
+    "ch-embolo": [84, 78, 72, 80, 45, 85],
+    "ch-amdouni": [82, 78, 72, 78, 40, 70],
+    "ch-okafor": [88, 78, 70, 80, 40, 72],
+    "at-pentz": [82, 76, 78, 82, 45, 78],
+    "at-aschlager": [80, 78, 75, 82, 45, 76],
+    "at-alaba": [78, 72, 84, 82, 84, 78],
+    "at-danso": [75, 45, 65, 68, 84, 86],
+    "at-lienhart": [68, 50, 68, 70, 82, 80],
+    "at-posch": [75, 60, 72, 70, 82, 82],
+    "at-mwene": [82, 60, 72, 75, 75, 72],
+    "at-seiwald": [76, 65, 76, 78, 78, 78],
+    "at-laimer": [82, 70, 78, 80, 80, 82],
+    "at-xschlager": [75, 72, 78, 78, 78, 80],
+    "at-grillitsch": [65, 68, 80, 78, 78, 75],
+    "at-sabitzer": [78, 82, 84, 82, 72, 78],
+    "at-baumgartner": [78, 78, 78, 82, 65, 75],
+    "at-wimmer": [84, 75, 76, 82, 60, 74],
+    "at-schmid": [82, 74, 76, 80, 50, 68],
+    "at-arnautovic": [68, 80, 76, 82, 40, 82],
+    "at-gregoritsch": [70, 80, 72, 75, 45, 84],
+    "no-nyland": [78, 76, 72, 80, 45, 75],
+    "no-karlstrom": [76, 72, 70, 78, 40, 74],
+    "no-ajer": [74, 50, 68, 72, 80, 82],
+    "no-ostigard": [70, 45, 62, 65, 78, 82],
+    "no-hancheolsen": [72, 40, 60, 65, 80, 80],
+    "no-ryerson": [80, 68, 74, 76, 78, 82],
+    "no-meling": [78, 60, 72, 74, 75, 70],
+    "no-berge": [72, 68, 75, 76, 78, 86],
+    "no-odegaard": [78, 84, 90, 88, 65, 70],
+    "no-aursnes": [75, 70, 78, 78, 76, 78],
+    "no-thorstvedt": [72, 76, 74, 76, 68, 80],
+    "no-bobb": [86, 78, 80, 88, 45, 60],
+    "no-nusa": [88, 75, 76, 86, 40, 60],
+    "no-haaland": [89, 93, 68, 80, 45, 88],
+    "no-sorloth": [82, 85, 74, 80, 45, 86],
+    "no-strandlarsen": [76, 80, 70, 75, 40, 84]
+  },
+  "gkIds": [
+    "de-terstegen",
+    "de-neuer",
+    "nl-verbruggen",
+    "nl-flekken",
+    "it-donnarumma",
+    "it-vicario",
+    "be-courtois",
+    "be-casteels",
+    "ch-sommer",
+    "ch-kobel",
+    "at-pentz",
+    "at-aschlager",
+    "no-nyland",
+    "no-karlstrom"
+  ],
+  "knownTraits": {
+    "de-terstegen": [
+      "SWEEPER_KEEPER",
+      "CREATIVE_PASSER"
+    ],
+    "de-neuer": [
+      "SWEEPER_KEEPER",
+      "BIG_GAME_PLAYER"
+    ],
+    "de-rudiger": [
+      "BALL_PLAYING_DEFENDER",
+      "AERIAL_THREAT",
+      "BIG_GAME_PLAYER"
+    ],
+    "de-tah": [
+      "BALL_PLAYING_DEFENDER",
+      "AERIAL_THREAT"
+    ],
+    "de-schlotterbeck": [
+      "BALL_PLAYING_DEFENDER",
+      "LEFT_FOOTED_CREATOR"
+    ],
+    "de-kimmich": [
+      "CREATIVE_PASSER",
+      "DEEP_PLAYMAKER",
+      "ATTACKING_FULLBACK",
+      "SHORT_PASS_SPECIALIST"
+    ],
+    "de-wirtz": [
+      "PLAYMAKER",
+      "DRIBBLER",
+      "BETWEEN_LINES",
+      "POSITIONAL_MASTER",
+      "FREE_ROLE"
+    ],
+    "de-musiala": [
+      "DRIBBLER",
+      "PLAYMAKER",
+      "BALL_CARRIER",
+      "INSIDE_FORWARD",
+      "BETWEEN_LINES"
+    ],
+    "de-sane": [
+      "SPEEDSTER",
+      "INVERTED_WINGER",
+      "LEFT_FOOTED_CREATOR",
+      "DIRECT_RUNNER"
+    ],
+    "de-gnabry": [
+      "INSIDE_FORWARD",
+      "DIRECT_RUNNER",
+      "BIG_GAME_PLAYER"
+    ],
+    "de-havertz": [
+      "PLAYMAKING_FORWARD",
+      "FREE_ROLE",
+      "BETWEEN_LINES",
+      "POSITIONAL_MASTER"
+    ],
+    "de-fullkrug": [
+      "TARGET_FORWARD",
+      "AERIAL_THREAT",
+      "BOX_FINISHER"
+    ],
+    "nl-vandijk": [
+      "BALL_PLAYING_DEFENDER",
+      "AERIAL_THREAT",
+      "DEFENSIVE_ANCHOR",
+      "BIG_GAME_PLAYER"
+    ],
+    "nl-deligt": [
+      "BALL_PLAYING_DEFENDER",
+      "DEFENSIVE_ANCHOR"
+    ],
+    "nl-ake": [
+      "BALL_PLAYING_DEFENDER",
+      "LEFT_FOOTED_CREATOR"
+    ],
+    "nl-dumfries": [
+      "ATTACKING_FULLBACK",
+      "AERIAL_THREAT",
+      "LATE_RUNNER"
+    ],
+    "nl-frimpong": [
+      "SPEEDSTER",
+      "ATTACKING_FULLBACK",
+      "DIRECT_RUNNER"
+    ],
+    "nl-dejong": [
+      "DEEP_PLAYMAKER",
+      "PRESS_RESISTANT",
+      "BALL_CARRIER",
+      "PLAYMAKER"
+    ],
+    "nl-reijnders": [
+      "BOX_TO_BOX",
+      "BALL_CARRIER"
+    ],
+    "nl-gravenberch": [
+      "PRESS_RESISTANT",
+      "BALL_CARRIER"
+    ],
+    "nl-simons": [
+      "DRIBBLER",
+      "PLAYMAKER",
+      "FREE_ROLE",
+      "BETWEEN_LINES"
+    ],
+    "nl-gakpo": [
+      "INVERTED_WINGER",
+      "DIRECT_RUNNER",
+      "BIG_GAME_PLAYER",
+      "FINALIZER"
+    ],
+    "nl-memphis": [
+      "PLAYMAKING_FORWARD",
+      "PENALTY_SPECIALIST"
+    ],
+    "it-donnarumma": [
+      "TRADITIONAL_KEEPER",
+      "BIG_GAME_PLAYER"
+    ],
+    "it-vicario": [
+      "TRADITIONAL_KEEPER",
+      "SWEEPER_KEEPER"
+    ],
+    "it-bastoni": [
+      "BALL_PLAYING_DEFENDER",
+      "LEFT_FOOTED_CREATOR",
+      "CREATIVE_CROSSER"
+    ],
+    "it-calafiori": [
+      "BALL_PLAYING_DEFENDER",
+      "LEFT_FOOTED_CREATOR",
+      "BALL_CARRIER"
+    ],
+    "it-buongiorno": [
+      "DEFENSIVE_ANCHOR"
+    ],
+    "it-dilorenzo": [
+      "ATTACKING_FULLBACK"
+    ],
+    "it-dimarco": [
+      "ATTACKING_FULLBACK",
+      "CREATIVE_CROSSER",
+      "LEFT_FOOTED_CREATOR"
+    ],
+    "it-barella": [
+      "BOX_TO_BOX",
+      "PRESS_RESISTANT",
+      "PLAYMAKER",
+      "LATE_RUNNER"
+    ],
+    "it-tonali": [
+      "BOX_TO_BOX",
+      "PRESSING_MIDFIELDER"
+    ],
+    "it-pellegrini": [
+      "CREATIVE_PASSER",
+      "LONG_SHOT_TAKER"
+    ],
+    "it-chiesa": [
+      "SPEEDSTER",
+      "DIRECT_RUNNER",
+      "INVERTED_WINGER"
+    ],
+    "be-courtois": [
+      "TRADITIONAL_KEEPER",
+      "BIG_GAME_PLAYER"
+    ],
+    "be-casteels": [
+      "TRADITIONAL_KEEPER"
+    ],
+    "be-onana": [
+      "DEFENSIVE_ANCHOR",
+      "PRESSING_MIDFIELDER"
+    ],
+    "be-tielemans": [
+      "DEEP_PLAYMAKER",
+      "CREATIVE_PASSER"
+    ],
+    "be-debruyne": [
+      "PLAYMAKER",
+      "CREATIVE_PASSER",
+      "CREATIVE_CROSSER",
+      "LONG_SHOT_TAKER",
+      "POSITIONAL_MASTER"
+    ],
+    "be-deketelaere": [
+      "BETWEEN_LINES",
+      "PLAYMAKING_FORWARD"
+    ],
+    "be-doku": [
+      "SPEEDSTER",
+      "DRIBBLER",
+      "DIRECT_RUNNER",
+      "BALL_CARRIER"
+    ],
+    "be-trossard": [
+      "INVERTED_WINGER",
+      "BETWEEN_LINES",
+      "PLAYMAKING_FORWARD"
+    ],
+    "be-lukaku": [
+      "TARGET_FORWARD",
+      "FINALIZER",
+      "BOX_FINISHER"
+    ],
+    "be-openda": [
+      "SPEEDSTER",
+      "ATTACKS_DEPTH",
+      "POACHER"
+    ],
+    "ch-sommer": [
+      "SWEEPER_KEEPER",
+      "BIG_GAME_PLAYER"
+    ],
+    "ch-kobel": [
+      "TRADITIONAL_KEEPER"
+    ],
+    "ch-akanji": [
+      "BALL_PLAYING_DEFENDER",
+      "PRESS_RESISTANT"
+    ],
+    "ch-xhaka": [
+      "DEEP_PLAYMAKER",
+      "CREATIVE_PASSER",
+      "LEFT_FOOTED_CREATOR",
+      "BIG_GAME_PLAYER"
+    ],
+    "at-alaba": [
+      "BALL_PLAYING_DEFENDER",
+      "LEFT_FOOTED_CREATOR",
+      "CREATIVE_PASSER"
+    ],
+    "at-laimer": [
+      "PRESSING_MIDFIELDER",
+      "BOX_TO_BOX",
+      "BALL_CARRIER"
+    ],
+    "at-sabitzer": [
+      "BOX_TO_BOX",
+      "LONG_SHOT_TAKER",
+      "LATE_RUNNER"
+    ],
+    "no-odegaard": [
+      "PLAYMAKER",
+      "CREATIVE_PASSER",
+      "LEFT_FOOTED_CREATOR",
+      "POSITIONAL_MASTER",
+      "BETWEEN_LINES"
+    ],
+    "no-bobb": [
+      "DRIBBLER",
+      "INSIDE_FORWARD",
+      "LEFT_FOOTED_CREATOR"
+    ],
+    "no-haaland": [
+      "FINALIZER",
+      "SPEEDSTER",
+      "TARGET_FORWARD",
+      "ATTACKS_DEPTH",
+      "AERIAL_THREAT",
+      "BOX_FINISHER"
+    ],
+    "no-sorloth": [
+      "TARGET_FORWARD",
+      "AERIAL_THREAT",
+      "BOX_FINISHER"
+    ]
+  },
+  "tactics": {
+    "germany": {
+      "teamId": "germany",
+      "teamName": "Alemanha",
+      "style": "Possession & High Press",
+      "playerRoles": {
+        "playmaker": "de-wirtz",
+        "captain": "de-kimmich",
+        "penaltyTaker": "de-havertz"
+      }
+    },
+    "netherlands": {
+      "teamId": "netherlands",
+      "teamName": "Holanda",
+      "style": "Total Football & Wing Play",
+      "playerRoles": {
+        "playmaker": "nl-dejong",
+        "captain": "nl-vandijk",
+        "penaltyTaker": "nl-memphis"
+      }
+    },
+    "italy": {
+      "teamId": "italy",
+      "teamName": "Itália",
+      "style": "Catenaccio & Counter",
+      "playerRoles": {
+        "playmaker": "it-barella",
+        "captain": "it-donnarumma",
+        "penaltyTaker": "it-retegui"
+      }
+    },
+    "belgium": {
+      "teamId": "belgium",
+      "teamName": "Bélgica",
+      "style": "Vertical Tiki-Taka",
+      "playerRoles": {
+        "playmaker": "be-debruyne",
+        "captain": "be-debruyne",
+        "penaltyTaker": "be-lukaku"
+      }
+    },
+    "switzerland": {
+      "teamId": "switzerland",
+      "teamName": "Suíça",
+      "style": "Organized Press",
+      "playerRoles": {
+        "playmaker": "ch-xhaka",
+        "captain": "ch-xhaka",
+        "penaltyTaker": "ch-embolo"
+      }
+    },
+    "austria": {
+      "teamId": "austria",
+      "teamName": "Áustria",
+      "style": "Gegenpressing",
+      "playerRoles": {
+        "playmaker": "at-sabitzer",
+        "captain": "at-alaba",
+        "penaltyTaker": "at-arnautovic"
+      }
+    },
+    "norway": {
+      "teamId": "norway",
+      "teamName": "Noruega",
+      "style": "Direct Play & High Intensity",
+      "playerRoles": {
+        "playmaker": "no-odegaard",
+        "captain": "no-odegaard",
+        "penaltyTaker": "no-haaland"
+      }
+    }
+  }
+}

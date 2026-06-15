@@ -7,6 +7,7 @@ import { mapEaFc26PlayerToSimulationPlayer, mapPosition } from "./mapEaFc26";
 import { applyResearchedProfile, RESEARCHED_PROFILES, ResearchedTacticalProfile } from "./researchedTactics";
 import squadsBA from "../../data/ea-fc-26/manual-brazil-argentina-test.json";
 import squadsB1 from "../../data/ea-fc-26/squads-batch1.json";
+import { COMBINED_SQUADS } from "./combinedData";
 
 /** Registro de todas as seleções disponíveis (cresce a cada leva). */
 const ALL_SQUADS: Record<string, NationalSquadFile> = {
@@ -16,6 +17,7 @@ const ALL_SQUADS: Record<string, NationalSquadFile> = {
   england: (squadsB1 as any).england,
   spain: (squadsB1 as any).spain,
   portugal: (squadsB1 as any).portugal,
+  ...COMBINED_SQUADS
 };
 
 /**
@@ -37,7 +39,11 @@ const COMPAT: Record<RoleId, RoleId[]> = {
 
 /** Escolhe os 11 titulares: melhor overall por slot, respeitando compatibilidade. */
 function pickXI(pool: RealPlayerData[], formation: string): { slot: FormationSlot; real: RealPlayerData }[] {
-  const slots = FORMATIONS[formation];
+  let slots = FORMATIONS[formation];
+  if (!slots) {
+    console.warn(`Formação desconhecida: ${formation}, usando 4-3-3 como fallback`);
+    slots = FORMATIONS["4-3-3"];
+  }
   const used = new Set<string>();
   const out: { slot: FormationSlot; real: RealPlayerData }[] = [];
   for (const slot of slots) {
@@ -54,9 +60,16 @@ function pickXI(pool: RealPlayerData[], formation: string): { slot: FormationSlo
       const score = p.overall - ci * 6; // pune FORTE jogar fora da posição natural
       if (score > bestScore) { bestScore = score; best = p; }
     }
-    if (!best) best = pool.filter((p) => !used.has(p.id)).sort((a, b) => b.overall - a.overall)[0];
-    used.add(best.id);
-    out.push({ slot, real: best });
+    if (!best) {
+      const gks = pool.filter((p) => p.position === "GK");
+      const gk = gks.sort((a, b) => b.overall - a.overall)[0];
+      const bestFallback = pool.filter((p) => !used.has(p.id)).sort((a, b) => b.overall - a.overall)[0];
+      best = gk ?? bestFallback;
+    }
+    if (best) {
+      used.add(best.id);
+      out.push({ slot, real: best });
+    }
   }
   return out;
 }
@@ -101,6 +114,7 @@ function applyResearchedRole(p: Player, roleKey: string) {
 function buildTeam(side: TeamSide, file: NationalSquadFile, tactics: TeamTactics, profile?: ResearchedTacticalProfile): Team {
   const color = file.colors.primary;
   const team = new Team(side, file.displayName, color, tactics);
+  team.secondaryColor = file.colors.secondary;
   const xi = pickXI(file.players, tactics.formation);
   xi.forEach(({ slot, real }, i) => {
     const m = mapEaFc26PlayerToSimulationPlayer(real);

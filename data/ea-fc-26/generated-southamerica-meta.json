@@ -1,0 +1,142 @@
+{
+  "faceStats": {
+    "uy-valverde": [90, 85, 84, 84, 80, 82],
+    "uy-araujo": [82, 45, 65, 60, 86, 84],
+    "uy-gimenez": [74, 45, 55, 52, 84, 83],
+    "uy-nunez": [90, 82, 70, 78, 45, 85],
+    "uy-rochet": [80, 78, 76, 82, 50, 79],
+    "co-diaz": [91, 80, 78, 86, 40, 75],
+    "co-james": [65, 82, 86, 84, 45, 65],
+    "ec-caicedo": [76, 68, 78, 80, 80, 82],
+    "ec-estupinan": [85, 65, 76, 78, 76, 78],
+    "py-almiron": [88, 74, 76, 82, 55, 68],
+    "py-gomez": [65, 50, 60, 55, 82, 84]
+  },
+  "gkIds": [
+    "uy-rochet",
+    "co-vargas",
+    "co-ospina",
+    "ec-galindez",
+    "ec-dominguez",
+    "py-coronel",
+    "py-silva"
+  ],
+  "knownTraits": {
+    "uy-valverde": ["BOX_TO_BOX", "LONG_SHOT_TAKER", "BALL_CARRIER", "BIG_GAME_PLAYER"],
+    "uy-araujo": ["DEFENSIVE_ANCHOR", "AERIAL_THREAT", "SPEEDSTER"],
+    "co-diaz": ["SPEEDSTER", "DRIBBLER", "INVERTED_WINGER", "DIRECT_RUNNER"],
+    "co-james": ["PLAYMAKER", "CREATIVE_PASSER", "LEFT_FOOTED_CREATOR", "LONG_SHOT_TAKER"],
+    "ec-caicedo": ["BOX_TO_BOX", "PRESS_RESISTANT", "DEFENSIVE_ANCHOR"],
+    "py-almiron": ["SPEEDSTER", "DIRECT_RUNNER", "LEFT_FOOTED_CREATOR"]
+  },
+  "tactics": {
+    "uruguay": {
+      "teamId": "uruguay",
+      "teamName": "Uruguai",
+      "researchedAt": "2026-06-14",
+      "sources": ["Manual"],
+      "confidence": "high",
+      "likelyFormation": "4-2-3-1",
+      "alternativeFormations": ["4-3-3"],
+      "tacticalSummary": "Bielsa style. Intense high press, vertical transitions, high tempo.",
+      "buildUpStyle": "balanced",
+      "defensiveLineHeight": 0.7,
+      "pressingIntensity": 0.85,
+      "counterPressing": 0.85,
+      "directness": 0.65,
+      "longBallFrequency": 0.35,
+      "progressivePassBias": 0.8,
+      "possessionPatience": 0.4,
+      "tempo": 0.8,
+      "width": 0.6,
+      "attackFocus": "balanced",
+      "transitionAttack": "accelerate forward immediately",
+      "transitionDefense": "intense counterpress",
+      "playerRoles": {
+        "uy-valverde": "box_to_box_progressor",
+        "uy-nunez": "pressing_finisher"
+      }
+    },
+    "colombia": {
+      "teamId": "colombia",
+      "teamName": "Colômbia",
+      "researchedAt": "2026-06-14",
+      "sources": ["Manual"],
+      "confidence": "high",
+      "likelyFormation": "4-2-3-1",
+      "alternativeFormations": ["4-3-3"],
+      "tacticalSummary": "Creative attack led by James Rodriguez and explosive wings.",
+      "buildUpStyle": "balanced",
+      "defensiveLineHeight": 0.5,
+      "pressingIntensity": 0.6,
+      "counterPressing": 0.6,
+      "directness": 0.55,
+      "longBallFrequency": 0.3,
+      "progressivePassBias": 0.7,
+      "possessionPatience": 0.6,
+      "tempo": 0.6,
+      "width": 0.7,
+      "attackFocus": "balanced",
+      "transitionAttack": "use wingers and James passing",
+      "transitionDefense": "medium block",
+      "playerRoles": {
+        "co-james": "free_playmaker",
+        "co-diaz": "inverted_winger"
+      }
+    },
+    "ecuador": {
+      "teamId": "ecuador",
+      "teamName": "Equador",
+      "researchedAt": "2026-06-14",
+      "sources": ["Manual"],
+      "confidence": "high",
+      "likelyFormation": "4-3-3",
+      "alternativeFormations": ["4-2-3-1"],
+      "tacticalSummary": "Physical and fast, relying on strong midfield and quick fullbacks.",
+      "buildUpStyle": "direct",
+      "defensiveLineHeight": 0.45,
+      "pressingIntensity": 0.65,
+      "counterPressing": 0.6,
+      "directness": 0.7,
+      "longBallFrequency": 0.4,
+      "progressivePassBias": 0.6,
+      "possessionPatience": 0.4,
+      "tempo": 0.65,
+      "width": 0.65,
+      "attackFocus": "balanced",
+      "transitionAttack": "quick transitions",
+      "transitionDefense": "solid defensive structure",
+      "playerRoles": {
+        "ec-caicedo": "box_to_box",
+        "ec-estupinan": "overlapping_fullback"
+      }
+    },
+    "paraguay": {
+      "teamId": "paraguay",
+      "teamName": "Paraguai",
+      "researchedAt": "2026-06-14",
+      "sources": ["Manual"],
+      "confidence": "high",
+      "likelyFormation": "4-3-3",
+      "alternativeFormations": ["4-4-2"],
+      "tacticalSummary": "Defensive resilience, counter-attacks, and set pieces.",
+      "buildUpStyle": "direct",
+      "defensiveLineHeight": 0.35,
+      "pressingIntensity": 0.5,
+      "counterPressing": 0.4,
+      "directness": 0.75,
+      "longBallFrequency": 0.5,
+      "progressivePassBias": 0.5,
+      "possessionPatience": 0.3,
+      "tempo": 0.5,
+      "width": 0.55,
+      "attackFocus": "balanced",
+      "transitionAttack": "counter-attack via Almiron",
+      "transitionDefense": "deep block",
+      "playerRoles": {
+        "py-gomez": "defensive_anchor",
+        "py-almiron": "direct_runner"
+      }
+    }
+  }
+}

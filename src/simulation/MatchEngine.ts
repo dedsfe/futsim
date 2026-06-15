@@ -56,6 +56,7 @@ export interface MatchStats {
   xg: { home: number; away: number };
   actions: Record<string, number>;
   actionsBySide: { home: Record<string, number>; away: Record<string, number> };
+  timeOnBall: Record<string, number>; // player id -> ticks in possession
 }
 
 export interface GoalEvent {
@@ -111,6 +112,7 @@ export class MatchEngine {
     shotsOnTarget: zeroSide(), saves: zeroSide(), passesCompleted: zeroSide(), passesFailed: zeroSide(),
     longPass: zeroSide(), longPassOk: zeroSide(), passByKind: {},
     xg: zeroSide(), actions: {}, actionsBySide: { home: {}, away: {} },
+    timeOnBall: {},
   };
   goals: GoalEvent[] = [];
   shootout: ShootoutState | null = null;
@@ -132,7 +134,7 @@ export class MatchEngine {
   } | null = null;
 
   private openingSide: Side = "home"; // quem deu a saída no 1º tempo
-  constructor(public home: Team, public away: Team) {
+  constructor(public home: Team, public away: Team, public isKnockout: boolean = false) {
     this.openingSide = "home";
     this.setupKickoff("home");
   }
@@ -208,8 +210,12 @@ export class MatchEngine {
     }
     const endLimit = MATCH.HALF_MINUTES * (this.extraTime ? 160 : 120); // 90' ou 120' c/ prorrogação
     if (this.half === 2 && this.gameSeconds >= endLimit) {
-      this.phase = "end";
-      this.lastEvent = this.extraTime ? "Fim da prorrogação" : "Fim de jogo";
+      if (this.isKnockout && this.scoreHome === this.scoreAway) {
+        this.startShootout();
+      } else {
+        this.phase = "end";
+        this.lastEvent = this.extraTime ? "Fim da prorrogação" : "Fim de jogo";
+      }
       return;
     }
 
@@ -217,7 +223,12 @@ export class MatchEngine {
     if (this.penalty) { this.takePenalty(); return; }
 
     const world = this.world;
-    if (world.possession) this.stats.possessionTicks[world.possession]++;
+    if (world.possession) {
+      this.stats.possessionTicks[world.possession]++;
+      if (this.ball.owner) {
+        this.stats.timeOnBall[this.ball.owner.id] = (this.stats.timeOnBall[this.ball.owner.id] || 0) + 1;
+      }
+    }
 
     // vantagem (lei da vantagem)
     if (this.pendingFoul) this.tickAdvantage(dt);
@@ -677,12 +688,138 @@ export class MatchEngine {
 
   private setupFreeKick(side: Side, spot: Vec2) {
     this.giveBall(spot, side);
-    // afasta adversários ~9,15m da bola (barreira/recuo)
-    const opp = side === "home" ? this.away.players : this.home.players;
-    for (const o of opp) {
-      if (o.isGK) continue;
-      const d = o.pos.dist(spot);
-      if (d < 9.15) o.pos = spot.add(o.pos.sub(spot).normalized().scale(9.15));
+
+    const atkTeam = side === "home" ? this.home : this.away;
+    const defTeam = side === "home" ? this.away : this.home;
+    const goalTarget = atkTeam.oppGoal;
+    const goalPos = new Vec2(goalTarget.x, goalTarget.y);
+    const distToGoal = spot.dist(goalPos);
+    const toGoal = goalPos.sub(spot).normalized();
+    // perpendicular ao vetor bola→gol (para espalhar jogadores lateralmente)
+    const perp = new Vec2(-toGoal.y, toGoal.x);
+
+    // --- classificação da falta ---
+    const isDirect = distToGoal < 32; // chute direto viável
+    const isClose = distToGoal < 22;  // muito perto, perigosa
+    const wallSize = isClose ? 4 : isDirect ? 3 : 2;
+
+    // ======================== DEFESA ========================
+
+    // 1) Barreira: wallSize jogadores a 9.15m na linha bola→gol
+    const wallCenter = spot.add(toGoal.scale(9.15));
+    const wallPlayers = defTeam.outfield()
+      .filter(p => !p.sentOff)
+      .sort((a, b) => b.attr.strength - a.attr.strength) // fortes na barreira
+      .slice(0, wallSize);
+    wallPlayers.forEach((p, i) => {
+      const offset = (i - (wallSize - 1) / 2) * 0.9; // ~0.9m entre cada
+      p.pos = wallCenter.add(perp.scale(offset));
+      p.vel = new Vec2(0, 0);
+      p.target = p.pos.clone();
+    });
+
+    // 2) Goleiro: atrás da barreira, deslocado para o lado aberto
+    const gk = defTeam.gk;
+    if (gk) {
+      // o goleiro cobre o lado que a barreira NÃO cobre
+      const openSide = spot.y < FIELD.H / 2 ? 1 : -1; // lado aberto
+      const gkX = goalPos.x + (goalPos.x === 0 ? 1.0 : -1.0);
+      const gkY = clamp(
+        goalPos.y + openSide * (FIELD.GOAL_WIDTH / 2 - 1.0),
+        FIELD.H / 2 - FIELD.GOAL_WIDTH / 2,
+        FIELD.H / 2 + FIELD.GOAL_WIDTH / 2,
+      );
+      gk.pos = new Vec2(gkX, gkY);
+      gk.vel = new Vec2(0, 0);
+      gk.target = gk.pos.clone();
+    }
+
+    // 3) Restante da defesa: marca na área / zonal próximo
+    const wallSet = new Set(wallPlayers);
+    const remainDef = defTeam.outfield()
+      .filter(p => !p.sentOff && !wallSet.has(p));
+
+    if (isDirect) {
+      // posiciona na/perto da grande área, cobrindo o espaço
+      const boxEdgeX = goalPos.x === 0
+        ? FIELD.PENALTY_DEPTH
+        : FIELD.W - FIELD.PENALTY_DEPTH;
+      const lineX = goalPos.x === 0
+        ? Math.max(boxEdgeX - 3, 2)
+        : Math.min(boxEdgeX + 3, FIELD.W - 2);
+      remainDef.forEach((p, i) => {
+        const lateral = FIELD.H / 2 + ((i - (remainDef.length - 1) / 2) * 5);
+        p.pos = new Vec2(lineX, clamp(lateral, 4, FIELD.H - 4));
+        p.vel = new Vec2(0, 0);
+        p.target = p.pos.clone();
+      });
+    } else {
+      // falta longe: só afasta quem está dentro dos 9.15m, resto mantém posição
+      for (const o of remainDef) {
+        const d = o.pos.dist(spot);
+        if (d < 9.15) {
+          o.pos = spot.add(o.pos.sub(spot).normalized().scale(9.15));
+          o.vel = new Vec2(0, 0);
+        }
+      }
+    }
+
+    // ======================== ATAQUE ========================
+
+    const taker = this.ball.owner!;
+
+    if (isDirect) {
+      // 4a) Jogador de opção curta perto da bola (para tabela/variação)
+      const shortOption = atkTeam.outfield()
+        .filter(p => !p.sentOff && p !== taker)
+        .sort((a, b) => b.attr.passing - a.attr.passing)[0];
+      if (shortOption) {
+        shortOption.pos = spot.add(perp.scale(-2.5)).add(toGoal.scale(-2));
+        shortOption.vel = new Vec2(0, 0);
+        shortOption.target = shortOption.pos.clone();
+      }
+
+      // 4b) Jogadores na área (para cabeceio/rebote): os mais fortes e
+      //     com melhor finalização, exceto o cobrador e a opção curta
+      const inBoxCandidates = atkTeam.outfield()
+        .filter(p => !p.sentOff && p !== taker && p !== shortOption)
+        .sort((a, b) =>
+          (b.attr.strength + b.attr.finishing) - (a.attr.strength + a.attr.finishing))
+        .slice(0, isClose ? 4 : 3);
+
+      const boxCenterX = goalPos.x === 0
+        ? FIELD.PENALTY_DEPTH * 0.6
+        : FIELD.W - FIELD.PENALTY_DEPTH * 0.6;
+      inBoxCandidates.forEach((p, i) => {
+        // espalha no arco da grande área com variação lateral
+        const lat = FIELD.H / 2 + ((i - (inBoxCandidates.length - 1) / 2) * 4.5);
+        const depth = boxCenterX + (goalPos.x === 0 ? -1 : 1) * (i % 2 === 0 ? 0 : 3);
+        p.pos = new Vec2(depth, clamp(lat, 8, FIELD.H - 8));
+        p.vel = new Vec2(0, 0);
+        p.target = p.pos.clone();
+      });
+
+      // 4c) Quem sobra fica atrás para equilíbrio (zagueiros, volantes)
+      const boxSet = new Set([taker, shortOption, ...inBoxCandidates]);
+      const remainAtk = atkTeam.outfield()
+        .filter(p => !p.sentOff && !boxSet.has(p));
+      remainAtk.forEach((p, i) => {
+        // posiciona atrás da bola, espalhado
+        const backX = spot.x + atkTeam.attackDir * -12 + (i * atkTeam.attackDir * -4);
+        const backY = FIELD.H / 2 + ((i - (remainAtk.length - 1) / 2) * 10);
+        p.pos = new Vec2(clamp(backX, 3, FIELD.W - 3), clamp(backY, 5, FIELD.H - 5));
+        p.vel = new Vec2(0, 0);
+        p.target = p.pos.clone();
+      });
+    }
+    // falta longe do gol: posicionamento normal (a IA cuida na retomada)
+
+    // 5) Receptor sugerido — melhor finalizador na área
+    if (isDirect) {
+      const inBox = atkTeam.outfield()
+        .filter(p => !p.sentOff && p !== taker && p.pos.dist(goalPos) < FIELD.PENALTY_DEPTH + 5)
+        .sort((a, b) => b.attr.finishing - a.attr.finishing);
+      this.ball.intendedReceiver = inBox[0] ?? null;
     }
   }
 
@@ -930,15 +1067,15 @@ export class MatchEngine {
     } else if (so.state === "result") {
       const w = this.decideShootout();
       if (w) {
-        so.winner = w; so.state = "done";
-        this.lastEvent = `Pênaltis: vitória de ${w === "home" ? this.home.name : this.away.name}!`;
+        this.winner = w;
         this.phase = "end";
-        return;
+        this.lastEvent = `Fim de Jogo! ${w === "home" ? this.home.name : this.away.name} vence nos pênaltis!`;
+      } else {
+        if (so.turn === "home") so.turn = "away";
+        else { so.turn = "home"; so.round++; so.idx.home++; so.idx.away++; }
+        this.positionForShootout(so.turn);
+        so.state = "ready"; so.timer = 1.2;
       }
-      if (so.turn === "home") so.turn = "away";
-      else { so.turn = "home"; so.round++; so.idx.home++; so.idx.away++; }
-      this.positionForShootout(so.turn);
-      so.state = "ready"; so.timer = 1.2;
     }
   }
 

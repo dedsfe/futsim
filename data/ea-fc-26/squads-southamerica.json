@@ -1,0 +1,98 @@
+{
+  "uruguay": {
+    "nation": "Uruguay",
+    "displayName": "Uruguai",
+    "colors": { "primary": "#5cbfeb", "secondary": "#000000" },
+    "formation": "4-2-3-1",
+    "players": [
+      { "id": "uy-rochet", "realName": "Sergio Rochet", "displayName": "Rochet", "position": "GK", "overall": 80, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-araujo", "realName": "Ronald Araujo", "displayName": "Araújo", "position": "CB", "overall": 86, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-gimenez", "realName": "José María Giménez", "displayName": "Giménez", "position": "CB", "overall": 83, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-olivera", "realName": "Mathías Olivera", "displayName": "Olivera", "position": "LB", "overall": 81, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-nandez", "realName": "Nahitan Nández", "displayName": "Nández", "position": "RB", "overall": 80, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-valverde", "realName": "Federico Valverde", "displayName": "Valverde", "position": "CM", "alternatePositions": ["RM"], "overall": 88, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-ugarte", "realName": "Manuel Ugarte", "displayName": "Ugarte", "position": "CDM", "overall": 82, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-bentancur", "realName": "Rodrigo Bentancur", "displayName": "Bentancur", "position": "CM", "overall": 82, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-nunez", "realName": "Darwin Núñez", "displayName": "Núñez", "position": "ST", "overall": 83, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-pellistri", "realName": "Facundo Pellistri", "displayName": "Pellistri", "position": "RM", "overall": 76, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-maraujo", "realName": "Maximiliano Araújo", "displayName": "M. Araújo", "position": "LM", "overall": 78, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-dlcruz", "realName": "Nicolás de la Cruz", "displayName": "De la Cruz", "position": "CM", "overall": 80, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-suarez", "realName": "Luis Suárez", "displayName": "Suárez", "position": "ST", "overall": 78, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-caceres", "realName": "Sebastián Cáceres", "displayName": "Cáceres", "position": "CB", "overall": 77, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-vinal", "realName": "Matías Viña", "displayName": "Viña", "position": "LB", "overall": 77, "nationality": "Uruguay", "source": "MANUAL_GENERATED" },
+      { "id": "uy-canobbio", "realName": "Agustín Canobbio", "displayName": "Canobbio", "position": "RM", "overall": 76, "nationality": "Uruguay", "source": "MANUAL_GENERATED" }
+    ]
+  },
+  "colombia": {
+    "nation": "Colombia",
+    "displayName": "Colômbia",
+    "colors": { "primary": "#fcd116", "secondary": "#003893" },
+    "formation": "4-2-3-1",
+    "players": [
+      { "id": "co-vargas", "realName": "Camilo Vargas", "displayName": "Vargas", "position": "GK", "overall": 79, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-sanchez", "realName": "Davinson Sánchez", "displayName": "Sánchez", "position": "CB", "overall": 80, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-lucumi", "realName": "Jhon Lucumí", "displayName": "Lucumí", "position": "CB", "overall": 78, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-munoz", "realName": "Daniel Muñoz", "displayName": "Muñoz", "position": "RB", "overall": 79, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-mojica", "realName": "Johan Mojica", "displayName": "Mojica", "position": "LB", "overall": 77, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-lerma", "realName": "Jefferson Lerma", "displayName": "Lerma", "position": "CDM", "overall": 80, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-rios", "realName": "Richard Ríos", "displayName": "Ríos", "position": "CM", "overall": 78, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-arias", "realName": "Jhon Arias", "displayName": "Arias", "position": "RM", "overall": 80, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-james", "realName": "James Rodríguez", "displayName": "James R.", "position": "CAM", "overall": 81, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-diaz", "realName": "Luis Díaz", "displayName": "Luis Díaz", "position": "LM", "overall": 84, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-cordoba", "realName": "Jhon Córdoba", "displayName": "Córdoba", "position": "ST", "overall": 78, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-duran", "realName": "Jhon Durán", "displayName": "Durán", "position": "ST", "overall": 77, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-cuesta", "realName": "Carlos Cuesta", "displayName": "Cuesta", "position": "CB", "overall": 77, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-machado", "realName": "Deiver Machado", "displayName": "Machado", "position": "LB", "overall": 76, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-uribe", "realName": "Mateus Uribe", "displayName": "Uribe", "position": "CM", "overall": 78, "nationality": "Colombia", "source": "MANUAL_GENERATED" },
+      { "id": "co-ospina", "realName": "David Ospina", "displayName": "Ospina", "position": "GK", "overall": 77, "nationality": "Colombia", "source": "MANUAL_GENERATED" }
+    ]
+  },
+  "ecuador": {
+    "nation": "Ecuador",
+    "displayName": "Equador",
+    "colors": { "primary": "#ffdd00", "secondary": "#00205b" },
+    "formation": "4-3-3",
+    "players": [
+      { "id": "ec-galindez", "realName": "Hernán Galíndez", "displayName": "Galíndez", "position": "GK", "overall": 75, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-hincapie", "realName": "Piero Hincapié", "displayName": "Hincapié", "position": "CB", "overall": 81, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-torres", "realName": "Félix Torres", "displayName": "Torres", "position": "CB", "overall": 77, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-estupinan", "realName": "Pervis Estupiñán", "displayName": "Estupiñán", "position": "LB", "overall": 81, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-preciado", "realName": "Ángelo Preciado", "displayName": "Preciado", "position": "RB", "overall": 76, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-caicedo", "realName": "Moisés Caicedo", "displayName": "Caicedo", "position": "CDM", "overall": 82, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-franco", "realName": "Alan Franco", "displayName": "Franco", "position": "CM", "overall": 75, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-paez", "realName": "Kendry Páez", "displayName": "Páez", "position": "CAM", "overall": 74, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-sarmiento", "realName": "Jeremy Sarmiento", "displayName": "Sarmiento", "position": "LM", "overall": 74, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-valencia", "realName": "Enner Valencia", "displayName": "Valencia", "position": "ST", "overall": 77, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-rodriguez", "realName": "Kevin Rodríguez", "displayName": "Rodríguez", "position": "ST", "overall": 74, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-plata", "realName": "Gonzalo Plata", "displayName": "Plata", "position": "RM", "overall": 76, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-gruezo", "realName": "Carlos Gruezo", "displayName": "Gruezo", "position": "CDM", "overall": 75, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-pacho", "realName": "Willian Pacho", "displayName": "Pacho", "position": "CB", "overall": 78, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-dominguez", "realName": "Alexander Domínguez", "displayName": "Domínguez", "position": "GK", "overall": 75, "nationality": "Ecuador", "source": "MANUAL_GENERATED" },
+      { "id": "ec-mena", "realName": "Ángel Mena", "displayName": "Mena", "position": "RM", "overall": 76, "nationality": "Ecuador", "source": "MANUAL_GENERATED" }
+    ]
+  },
+  "paraguay": {
+    "nation": "Paraguay",
+    "displayName": "Paraguai",
+    "colors": { "primary": "#d52b1e", "secondary": "#ffffff" },
+    "formation": "4-3-3",
+    "players": [
+      { "id": "py-coronel", "realName": "Carlos Coronel", "displayName": "Coronel", "position": "GK", "overall": 75, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-gomez", "realName": "Gustavo Gómez", "displayName": "Gómez", "position": "CB", "overall": 81, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-alderete", "realName": "Omar Alderete", "displayName": "Alderete", "position": "CB", "overall": 77, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-alonso", "realName": "Júnior Alonso", "displayName": "Alonso", "position": "LB", "overall": 78, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-balbuena", "realName": "Fabián Balbuena", "displayName": "Balbuena", "position": "CB", "overall": 77, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-cubas", "realName": "Andrés Cubas", "displayName": "Cubas", "position": "CDM", "overall": 76, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-villasanti", "realName": "Mathías Villasanti", "displayName": "Villasanti", "position": "CM", "overall": 78, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-gomez_d", "realName": "Diego Gómez", "displayName": "D. Gómez", "position": "CM", "overall": 75, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-almiron", "realName": "Miguel Almirón", "displayName": "Almirón", "position": "RM", "alternatePositions": ["CAM"], "overall": 81, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-enciso", "realName": "Julio Enciso", "displayName": "Enciso", "position": "LM", "overall": 77, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-sosa", "realName": "Ramón Sosa", "displayName": "Sosa", "position": "LM", "overall": 76, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-sanabria", "realName": "Antonio Sanabria", "displayName": "Sanabria", "position": "ST", "overall": 78, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-bareiro", "realName": "Adam Bareiro", "displayName": "Bareiro", "position": "ST", "overall": 76, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-kaku", "realName": "Kaku", "displayName": "Kaku", "position": "CAM", "overall": 77, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-rojas", "realName": "Matías Rojas", "displayName": "Rojas", "position": "RM", "overall": 77, "nationality": "Paraguay", "source": "MANUAL_GENERATED" },
+      { "id": "py-silva", "realName": "Antony Silva", "displayName": "Silva", "position": "GK", "overall": 74, "nationality": "Paraguay", "source": "MANUAL_GENERATED" }
+    ]
+  }
+}

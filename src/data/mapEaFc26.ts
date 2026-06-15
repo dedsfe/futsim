@@ -3,6 +3,7 @@ import { ROLE_BIAS } from "../domain/roster";
 import type { Attributes, RoleId, Trait } from "../domain/types";
 import type { RealPlayerData } from "./eaFc26Types";
 import { FACE_STATS, GK_IDS } from "./faceStats";
+import { COMBINED_KNOWN_TRAITS } from "./combinedData";
 
 /** Posição EA → função interna (RoleId). */
 export function mapPosition(pos: string): RoleId {
@@ -25,6 +26,7 @@ const cl = (v: number) => clamp(Math.round(v), 20, 99);
  * Alteram comportamento via instruções/decisões (ver buildNationalTeam/decisions).
  */
 const KNOWN_TRAITS: Record<string, Trait[]> = {
+  ...COMBINED_KNOWN_TRAITS,
   // Brasil
   "br-vini": ["SPEEDSTER", "DRIBBLER", "INVERTED_WINGER", "ATTACKS_DEPTH"],
   "br-raphinha": ["PRESSING_WINGER", "INVERTED_WINGER", "DIRECT_RUNNER", "CREATIVE_CROSSER"],

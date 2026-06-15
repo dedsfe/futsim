@@ -1,3 +1,5 @@
+import { COMBINED_FACE_STATS, COMBINED_GK_IDS } from "./combinedData";
+
 /**
  * Sub-stats REAIS do EA FC 26 (fcratings.com, confirmados via web em 2026-06).
  * Jogador de linha: [PAC, SHO, PAS, DRI, DEF, PHY].
@@ -5,6 +7,7 @@
  * Quem NÃO está aqui usa fallback conservador por posição (nunca overall puro).
  */
 export const FACE_STATS: Record<string, number[]> = {
+  ...COMBINED_FACE_STATS,
   // ---- Brasil ----
   "br-alisson": [86, 87, 83, 87, 56, 88],
   "br-carlos-augusto": [78, 72, 77, 79, 79, 77],
@@ -107,4 +110,4 @@ export const FACE_STATS: Record<string, number[]> = {
 };
 
 /** GKs cujos 6 números são stats de GOLEIRO (DIV/HAN/KIC/REF/SPD/POS). */
-export const GK_IDS = new Set(["br-alisson", "ar-emi", "ar-rulli", "fr-maignan", "es-simon"]);
+export const GK_IDS = new Set(["br-alisson", "ar-emi", "ar-rulli", "fr-maignan", "es-simon", ...COMBINED_GK_IDS]);

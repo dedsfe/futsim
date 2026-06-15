@@ -1,0 +1,62 @@
+{
+  "region": "Africa",
+  "generatedAt": "2026-06-14T23:23:58-03:00",
+  "source": "EA_FC_26_ESTIMATED",
+  "nations": [
+    {
+      "id": "morocco",
+      "name": "Morocco",
+      "displayName": "Marrocos"
+    },
+    {
+      "id": "senegal",
+      "name": "Senegal",
+      "displayName": "Senegal"
+    },
+    {
+      "id": "nigeria",
+      "name": "Nigeria",
+      "displayName": "Nigéria"
+    },
+    {
+      "id": "egypt",
+      "name": "Egypt",
+      "displayName": "Egito"
+    },
+    {
+      "id": "ivorycoast",
+      "name": "Côte d'Ivoire",
+      "displayName": "Costa do Marfim"
+    },
+    {
+      "id": "southafrica",
+      "name": "South Africa",
+      "displayName": "África do Sul"
+    },
+    {
+      "id": "ghana",
+      "name": "Ghana",
+      "displayName": "Gana"
+    },
+    {
+      "id": "algeria",
+      "name": "Algeria",
+      "displayName": "Argélia"
+    },
+    {
+      "id": "tunisia",
+      "name": "Tunisia",
+      "displayName": "Tunísia"
+    },
+    {
+      "id": "drcongo",
+      "name": "Congo DR",
+      "displayName": "RD Congo"
+    },
+    {
+      "id": "caboverde",
+      "name": "Cabo Verde",
+      "displayName": "Cabo Verde"
+    }
+  ]
+}
